@@ -1,0 +1,53 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <BuildDependsOn>
+            WriteBuildNumberToFiles;
+            $(BuildDependsOn)
+        </BuildDependsOn>
+    </PropertyGroup>
+
+    <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+    <Import Project="$(MSBuildExtensionsPath)\ExtensionPack\MSBuild.ExtensionPack.tasks" />
+    <PropertyGroup>
+        <Major>3</Major>
+        <Minor>2</Minor>
+        <Build>1</Build>
+        <Revision>0</Revision>
+        <Version>$(Major).$(Minor).$(Build).$(Revision)</Version>
+        <FileVersion>Properties\version.txt</FileVersion>
+        <SkipIncrementVersion>true</SkipIncrementVersion>
+    </PropertyGroup>
+    <Target Name="WriteBuildNumberToFiles">
+        <Message Text="WriteBuildNumberToFiles " />
+        <Attrib Files="$(FileVersion)" ReadOnly="false" />
+        <Version VersionFile="$(FileVersion)" BuildType="None" RevisionType="None">
+            <Output TaskParameter="Major" PropertyName="Major" />
+            <Output TaskParameter="Minor" PropertyName="Minor" />
+            <Output TaskParameter="Build" PropertyName="Build" />
+            <Output TaskParameter="Revision" PropertyName="Revision" />
+        </Version>
+        <PropertyGroup>
+            <Version>$(Major).$(Minor).$(Build).$(Revision)</Version>
+        </PropertyGroup>
+        <ItemGroup>
+            <AssemblyInfoFiles Include="AssemblyInfoGlobal.cs" />
+        </ItemGroup>
+        <MSBuild.ExtensionPack.Framework.AssemblyInfo AssemblyInfoFiles="@(AssemblyInfoFiles)" AssemblyVersion="$(version)" AssemblyFileVersion="$(version)" />
+        <Message Text="SetBuildNumber = $(Version)" />
+        <ItemGroup>
+            <Tokens Include="AssemblyVersion">
+                <ReplacementValue>$(Major).$(Minor).$(Build).$(Revision)</ReplacementValue>
+            </Tokens>
+        </ItemGroup>
+        <TemplateFile
+           Template="..\CppFixItAddIn\CppFixItAddInCodeFort.in.codefort"
+           OutputFilename="CppFixItAddInCodeFort.codefort"
+           Tokens="@(Tokens)"/>
+        <TemplateFile
+           Template="..\CppFixItAddIn2012\CppFixItAddInCodeFort.in.codefort"
+           OutputFilename="CppFixItAddInCodeFort.codefort"
+           Tokens="@(Tokens)"/>
+    </Target>
+ 
+</Project>

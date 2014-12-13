@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CppFixItAddIn2010</name>
+    </assembly>
+    <members>
+        <member name="T:AssemblyInfo`1">
+            <summary>
+            AssemblyInfo class.
+            </summary>
+        </member>
+        <member name="F:AssemblyInfo`1.myType">
+            <summary>
+            myType.
+            </summary>
+        </member>
+        <member name="M:AssemblyInfo`1.#ctor">
+            <summary>
+            Initializes a new instance of the AssemblyInfo class.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfo`1.AssemblyName">
+            <summary>
+            Gets the name of the assembly.
+            </summary>
+            <value>The name of the assembly.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.AssemblyFullName">
+            <summary>
+            Gets the full name of the assembly.
+            </summary>
+            <value>The full name of the assembly.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.CodeBase">
+            <summary>
+            Gets the code base.
+            </summary>
+            <value>The code base.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.Copyright">
+            <summary>
+            Gets the copyright.
+            </summary>
+            <value>The copyright.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.Company">
+            <summary>
+            Gets the company.
+            </summary>
+            <value>The company.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.Description">
+            <summary>
+            Gets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.Product">
+            <summary>
+            Gets the product.
+            </summary>
+            <value>The product.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.Title">
+            <summary>
+            Gets the title.
+            </summary>
+            <value>The title.</value>
+        </member>
+        <member name="P:AssemblyInfo`1.Version">
+            <summary>
+            Gets the version.
+            </summary>
+            <value>The version.</value>
+        </member>
+        <member name="T:CppFixItAddIn.Connect">
+            <summary>The object for implementing an Add-in.</summary>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:CppFixItAddIn.Connect.#ctor(System.String)">
+            <summary>Implements the constructor for the Add-in object. Place your initialization code within this method.</summary>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.OnConnection(System.Object,Extensibility.ext_ConnectMode,System.Object,System.Array@)">
+            <summary>Implements the OnConnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being loaded.</summary>
+            <param term='application'>Root object of the host application.</param>
+            <param term='connectMode'>Describes how the Add-in is being loaded.</param>
+            <param term='addInInst'>Object representing this Add-in.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:CppFixItAddIn.Connect.OnDisconnection(Extensibility.ext_DisconnectMode,System.Array@)">
+            <summary>Implements the OnDisconnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being unloaded.</summary>
+            <param term='disconnectMode'>Describes how the Add-in is being unloaded.</param>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:CppFixItAddIn.Connect.OnAddInsUpdate(System.Array@)">
+            <summary>Implements the OnAddInsUpdate method of the IDTExtensibility2 interface. Receives notification when the collection of Add-ins has changed.</summary>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />		
+        </member>
+        <member name="M:CppFixItAddIn.Connect.OnStartupComplete(System.Array@)">
+            <summary>Implements the OnStartupComplete method of the IDTExtensibility2 interface. Receives notification that the host application has completed loading.</summary>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:CppFixItAddIn.Connect.OnBeginShutdown(System.Array@)">
+            <summary>Implements the OnBeginShutdown method of the IDTExtensibility2 interface. Receives notification that the host application is being unloaded.</summary>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:CppFixItAddIn.Connect.QueryStatus(System.String,EnvDTE.vsCommandStatusTextWanted,EnvDTE.vsCommandStatus@,System.Object@)">
+            <summary>Implements the QueryStatus method of the IDTCommandTarget interface. This is called when the command's availability is updated</summary>
+            <param term='commandName'>The name of the command to determine state for.</param>
+            <param term='neededText'>Text that is needed for the command.</param>
+            <param term='status'>The state of the command in the user interface.</param>
+            <param term='commandText'>Text requested by the neededText parameter.</param>
+            <seealso class='Exec' />
+        </member>
+        <member name="M:CppFixItAddIn.Connect.Exec(System.String,EnvDTE.vsCommandExecOption,System.Object@,System.Object@,System.Boolean@)">
+            <summary>Implements the Exec method of the IDTCommandTarget interface. This is called when the command is invoked.</summary>
+            <param term='commandName'>The name of the command to execute.</param>
+            <param term='executeOption'>Describes how the command should be run.</param>
+            <param term='varIn'>Parameters passed from the caller to the command handler.</param>
+            <param term='varOut'>Parameters passed from the command handler to the caller.</param>
+            <param term='handled'>Informs the caller if the command was handled or not.</param>
+            <seealso class='Exec' />
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStartAnalyze(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStartAnalyze
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStopAnalyze(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStopAnalyze
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStartFile(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStartFile
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStopFile(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStopFile
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStartProject(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStartProject
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStopProject(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStopProject
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStartSolution(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStartSolution
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:CppFixItAddIn.Connect.AnalyzerStopSolution(System.Boolean)">
+            <summary>
+            Call from ClangAnalyzer.DelegateStopSolution
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="T:CppFixItAddIn.Connect2010">
+            <summary>
+            Visual Studio 2010 Add-in for c++ static analysis
+            </summary>
+        </member>
+        <member name="M:CppFixItAddIn.Connect2010.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:CppFixItAddIn.Connect2010Debug">
+            <summary>
+            Visual Studio 2010 Add-in for c++ static analysis
+            </summary>
+        </member>
+        <member name="M:CppFixItAddIn.Connect2010Debug.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CppFixItAddIn.DTE2Utils.CreateVCProjectQueue(EnvDTE.Solution)">
+            <summary>
+            Converts a project type string to an enum.
+            </summary>
+        </member>
+    </members>
+</doc>

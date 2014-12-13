@@ -1,0 +1,7 @@
+**/Bin
+**/Debug
+**/obj
+*.suo
+**/*.exe
+**/*.dll
+**/*.csproj.user

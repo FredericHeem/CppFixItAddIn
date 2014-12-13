@@ -5,3 +5,6 @@
 **/*.exe
 **/*.dll
 **/*.csproj.user
+CppFixItAddIn2012/CppFixItAddInCodeFort.log
+CppFixItAddIn/CppFixItAddInCodeFort.codefort
+*.codefortmap

@@ -1,9 +1,5 @@
 <Project z:Id="i1" xmlns="CodeFort.Model" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
     <Assemblies>
-        <ProjectAssembly z:Id="i2">
-            <DoEmbed>true</DoEmbed>
-            <FullName>Infralution.Licensing, Version=4.7.2.0, Culture=neutral, PublicKeyToken=3e7e8e3744a5c13f</FullName>
-        </ProjectAssembly>
         <ProjectAssembly z:Id="i3">
             <DoEmbed>true</DoEmbed>
             <FullName>CppFixItUi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</FullName>

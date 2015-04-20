@@ -294,6 +294,7 @@ namespace CppFixItAddIn
             }
             
             ts.TraceInformation("GetIncludesForProject: \n" + includes.ToString());
+
             return includes.ToString();
         }
 
@@ -366,7 +367,7 @@ namespace CppFixItAddIn
         static private string BuildIncludes(string rawIncludes, string includeType)
         {
             StringBuilder includes = new StringBuilder();
-            String cIncDir = rawIncludes.Replace(",", ";");
+            String cIncDir = rawIncludes.Replace("\"", "").Replace(",", ";");
             String[] cIncDirs = cIncDir.Split(';');
 
             var uniqueDirs = new HashSet<String>();
